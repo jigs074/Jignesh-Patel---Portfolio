@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jignesh Patel - Big Data & AI/ML Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e94560;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e94560;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e94560;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(233, 69, 96, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #e94560, #0f3460);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content .description {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #e94560, #0f3460);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e94560;
+            border: 2px solid #e94560;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #e94560, #0f3460);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #e94560, #0f3460);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            margin: 0 auto;
+        }
+
+        .about-content h3 {
+            color: #e94560;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e94560;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: #e94560;
+        }
+
+        .skill-category h3 {
+            color: #e94560;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(233, 69, 96, 0.2);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #e94560;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: #e94560;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            color: #e94560;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            color: #ccc;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #e94560;
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #e94560, #0f3460);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #e94560;
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: #e94560;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-links a:hover {
+            color: #fff;
+        }
+
+        /* YouTube Section */
+        .youtube-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .youtube-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .youtube-stat {
+            text-align: center;
+        }
+
+        .youtube-stat .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e94560;
+        }
+
+        .youtube-stat .label {
+            color: #ccc;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .contact-item i {
+            color: #e94560;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 35, 0.9);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #ccc;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e94560;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .youtube-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Floating elements */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 7s;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 14s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape" style="width: 100px; height: 100px; background: linear-gradient(45deg, #e94560, #0f3460); border-radius: 50%;"></div>
+        <div class="shape" style="width: 80px; height: 80px; background: linear-gradient(45deg, #0f3460, #e94560); border-radius: 20px;"></div>
+        <div class="shape" style="width: 60px; height: 60px; background: linear-gradient(45deg, #e94560, #0f3460); clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">JP</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Jignesh Patel</h1>
+            <p class="subtitle">Big Data & AI/ML Developer</p>
+            <p class="description">
+                Passionate Computer Science student specializing in Big Data and AI/ML with hands-on experience in 
+                building scalable data pipelines, developing intelligent systems, and creating impactful analytics solutions.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code"></i> View Projects
+                </a>
+                <a href="https://www.youtube.com/@JigCode" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-youtube"></i> YouTube Channel
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="profile-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>Computer Science Student & Data Enthusiast</h3>
+                    <p>
+                        I'm a dedicated Computer Science student at Conestoga College, pursuing a Bachelor's degree with 
+                        a major in Big Data & AI/ML. With a strong foundation in software development and data engineering, 
+                        I'm passionate about leveraging technology to solve complex problems and create meaningful impact.
+                    </p>
+                    <p>
+                        Currently working as a Student Success Project Assistant at Conestoga College, where I've built 
+                        10+ Power BI dashboards and automated ETL workflows. I also run a coding YouTube channel with 
+                        32+ videos and 185+ subscribers, sharing knowledge and helping others learn programming concepts.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3.4</div>
+                            <div class="stat-label">GPA</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Dashboards Built</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">185+</div>
+                            <div class="stat-label">YouTube Subscribers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">32+</div>
+                            <div class="stat-label">Tutorial Videos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming & Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Scala</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Big Data & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">ETL Development</span>
+                        <span class="skill-tag">Data Pipelines</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Data Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">Apache Airflow</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">Neural Networks</span>
+                        <span class="skill-tag">CNN</span>
+                        <span class="skill-tag">NLP</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-globe"></i> Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">ASP.NET MVC</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Authentication</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">Redshift</span>
+                        <span class="skill-tag">Athena</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <h3>Student Success Project Assistant</h3>
+                    <div class="company">Conestoga College, Kitchener, ON</div>
+                    <div class="date">May 2025 - Present</div>
+                    <ul>
+                        <li>Built 10+ Power BI dashboards using optimized data models and DAX to track student success, retention, and engagement, driving a 25% boost in support interventions</li>
+                        <li>Automated ETL workflows (SQL, SharePoint, student systems), reducing manual reporting by 50% and increasing data refresh from monthly to daily</li>
+                        <li>Partnered with 8+ department heads, created user guides, and led 12+ training sessions, increasing self-service analytics adoption by 40%</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Power BI Developer</h3>
+                    <div class="company">Well.ca, Guelph, ON</div>
+                    <div class="date">Apr. 2024 - Jan. 2025</div>
+                    <ul>
+                        <li>Developed and maintained 50+ Power BI dashboards using advanced DAX and SQL for sales, marketing, and supply chain teams</li>
+                        <li>Integrated AWS S3 and Athena into data workflows for scalable querying and centralized reporting</li>
+                        <li>Led 2 Power BI projects, collaborating with cross-functional teams to optimize reporting and decision-making</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Database Support Technician</h3>
+                    <div class="company">Lunenfeld Tanenbaum Research Institute, Toronto, ON</div>
+                    <div class="date">Jun. 2023 - Dec. 2023</div>
+                    <ul>
+                        <li>Implemented 20+ automated validation scripts, achieving 99.9% data accuracy</li>
+                        <li>Diagnosed and resolved 50+ database issues, improving system reliability</li>
+                        <li>Built efficient webpages for researchers and thoroughly tested APIs using Postman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Streaming-App</h3>
+                        <p>Real-time video streaming and chat application built with Node.js, Express, and Socket.io. Features peer-to-peer video calling with media controls in dynamic chat rooms.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/jigs074/StreamingApp" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" onclick="alert('Demo link - Add your deployed URL here')">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>MedAI</h3>
+                        <p>Production-ready ML model deployed on AWS SageMaker with MLFlow integration. Features Apache Spark-based pipelines for processing large-scale medical datasets.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MedAI-Team-Organization/MedAI" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" onclick="alert('Demo link - Add your deployed URL here')">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Genius-Fusion</h3>
+                        <p>Full-stack online learning platform built with C# ASP.NET Core backend and React.js with Next.js frontend. Features server-side rendering and optimized routing.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/GeniusFusion-Online-Learning-Platform/GeniusFusion" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" onclick="alert('Demo link - Add your deployed URL here')">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section id="youtube" class="section">
+        <div class="container">
+            <h2 class="section-title">YouTube Channel</h2>
+            <div class="youtube-section">
+                <h3 style="color: #e94560; font-size: 2rem; margin-bottom: 1rem;">
+                    <i class="fab fa-youtube"></i> JigCode
+                </h3>
+                <p style="color: #ccc; font-size: 1.1rem; margin-bottom: 2rem;">
+                    Sharing coding knowledge and tutorials to help developers learn and grow. 
+                    From beginner concepts to advanced techniques in programming and data science.
+                </p>
+                <div class="youtube-stats">
+                    <div class="youtube-stat">
+                        <div class="number">185+</div>
+                        <div class="label">Subscribers</div>
+                    </div>
+                    <div class="youtube-stat">
+                        <div class="number">32+</div>
+                        <div class="label">Videos</div>
+                    </div>
+                    <div class="youtube-stat">
+                        <div class="number">1000+</div>
+                        <div class="label">Views</div>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/@JigCode" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fab fa-youtube"></i> Visit Channel
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="color: #e94560; margin-bottom: 2rem;">Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>jigspatel7624@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>519 722 1569</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kitchener, ON, Canada</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/jignesh01patel/" target="_blank" style="color: #ccc; text-decoration: none;">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/jigs074" target="_blank" style="color: #ccc; text-decoration: none;">GitHub Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-youtube"></i>
+                        <a href="https://www.youtube.com/@JigCode" target="_blank" style="color: #ccc; text-decoration: none;">YouTube Channel</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="color: #e94560; margin-bottom: 2rem;">Send Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jignesh01patel/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/jigs074" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/@JigCode" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:jigspatel7624@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p style="color: #ccc;">&copy; 2025 Jignesh Patel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(15, 15, 35, 0.98)';
+            } else {
+                nav.style.background = 'rgba(15, 15, 35, 0.95)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero-content h1');
+            typeWriter(heroTitle, 'Jignesh Patel', 150);
+        });
+
+        // Add particle effect on mouse move
+        document.addEventListener('mousemove', function(e) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = '#e94560';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = e.clientX + 'px';
+            particle.style.top = e.clientY + 'px';
+            particle.style.zIndex = '9999';
+            particle.style.opacity = '0.7';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.style.transition = 'all 1s ease-out';
+                particle.style.opacity = '0';
+                particle.style.transform = 'scale(0)';
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 1000);
+            }, 100);
+        });
+    </script>
+</body>
+</html>
